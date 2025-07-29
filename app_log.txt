@@ -1,0 +1,52 @@
+Using launch settings from /home/ubuntu/PayrollManagement.API/Properties/launchSettings.json...
+Building...
+/home/ubuntu/PayrollManagement.API/PayrollManagement.API.csproj : warning NU1510: PackageReference Microsoft.Extensions.Caching.Memory will not be pruned. Consider removing this package from your dependencies, as it is likely unnecessary.
+/home/ubuntu/PayrollManagement.API/PayrollManagement.API.csproj : warning NU1510: PackageReference Microsoft.Extensions.Caching.Memory will not be pruned. Consider removing this package from your dependencies, as it is likely unnecessary.
+[08:47:40 FTL] Application terminated unexpectedly {}
+System.Reflection.ReflectionTypeLoadException: Unable to load one or more of the requested types.
+Method 'GetSwagger' in type 'Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator' from assembly 'Swashbuckle.AspNetCore.SwaggerGen, Version=9.0.3.0, Culture=neutral, PublicKeyToken=d84d99fb0135530a' does not have an implementation.
+Could not load type 'Microsoft.OpenApi.Models.OpenApiDocument' from assembly 'Microsoft.OpenApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3f5743946376f042'.
+Could not load type 'Microsoft.OpenApi.Models.OpenApiResponse' from assembly 'Microsoft.OpenApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3f5743946376f042'.
+Could not load type 'Microsoft.OpenApi.Models.OpenApiOperation' from assembly 'Microsoft.OpenApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3f5743946376f042'.
+Could not load type 'Microsoft.OpenApi.Models.OpenApiOperation' from assembly 'Microsoft.OpenApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3f5743946376f042'.
+Could not load type 'Microsoft.OpenApi.Models.OpenApiOperation' from assembly 'Microsoft.OpenApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3f5743946376f042'.
+Could not load type 'Microsoft.OpenApi.Models.OperationType' from assembly 'Microsoft.OpenApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3f5743946376f042'.
+Could not load type 'Microsoft.OpenApi.Models.OpenApiParameter' from assembly 'Microsoft.OpenApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3f5743946376f042'.
+Could not load type 'Microsoft.OpenApi.Models.OpenApiParameter' from assembly 'Microsoft.OpenApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3f5743946376f042'.
+Could not load type 'Microsoft.OpenApi.Models.OpenApiParameter' from assembly 'Microsoft.OpenApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3f5743946376f042'.
+Could not load type 'Microsoft.OpenApi.Models.OpenApiPaths' from assembly 'Microsoft.OpenApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3f5743946376f042'.
+Could not load type 'Microsoft.OpenApi.Models.OpenApiPaths' from assembly 'Microsoft.OpenApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3f5743946376f042'.
+Could not load type 'Microsoft.OpenApi.Models.OpenApiRequestBody' from assembly 'Microsoft.OpenApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3f5743946376f042'.
+Could not load type 'Microsoft.OpenApi.Models.OpenApiSecurityScheme' from assembly 'Microsoft.OpenApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3f5743946376f042'.
+Could not load type 'Microsoft.OpenApi.Models.OpenApiDocument' from assembly 'Microsoft.OpenApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3f5743946376f042'.
+   at System.Reflection.RuntimeModule.GetDefinedTypes()
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFeatureProvider.PopulateFeature(IEnumerable`1 parts, ControllerFeature feature)
+   at Microsoft.AspNetCore.Mvc.ApplicationParts.ApplicationPartManager.PopulateFeature[TFeature](TFeature feature)
+   at Microsoft.AspNetCore.Mvc.ApplicationModels.ControllerActionDescriptorProvider.GetControllerTypes()
+   at Microsoft.AspNetCore.Mvc.ApplicationModels.ControllerActionDescriptorProvider.GetDescriptors()
+   at Microsoft.AspNetCore.Mvc.ApplicationModels.ControllerActionDescriptorProvider.OnProvidersExecuting(ActionDescriptorProviderContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.DefaultActionDescriptorCollectionProvider.UpdateCollection()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.DefaultActionDescriptorCollectionProvider.Initialize()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.DefaultActionDescriptorCollectionProvider.GetChangeToken()
+   at Microsoft.Extensions.Primitives.ChangeToken.ChangeTokenRegistration`1..ctor(Func`1 changeTokenProducer, Action`1 changeTokenConsumer, TState state)
+   at Microsoft.Extensions.Primitives.ChangeToken.OnChange(Func`1 changeTokenProducer, Action changeTokenConsumer)
+   at Microsoft.AspNetCore.Mvc.Routing.ActionEndpointDataSourceBase.Subscribe()
+   at Microsoft.AspNetCore.Builder.ControllerEndpointRouteBuilderExtensions.GetOrCreateDataSource(IEndpointRouteBuilder endpoints)
+   at Microsoft.AspNetCore.Builder.ControllerEndpointRouteBuilderExtensions.MapControllers(IEndpointRouteBuilder endpoints)
+   at PayrollManagement.API.Extensions.ApplicationBuilderExtensions.ConfigureApplicationAsync(WebApplication app) in /home/ubuntu/PayrollManagement.API/Extensions/ApplicationBuilderExtensions.cs:line 71
+   at Program.<Main>$(String[] args) in /home/ubuntu/PayrollManagement.API/Program.cs:line 37
+System.TypeLoadException: Method 'GetSwagger' in type 'Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator' from assembly 'Swashbuckle.AspNetCore.SwaggerGen, Version=9.0.3.0, Culture=neutral, PublicKeyToken=d84d99fb0135530a' does not have an implementation.
+System.TypeLoadException: Could not load type 'Microsoft.OpenApi.Models.OpenApiDocument' from assembly 'Microsoft.OpenApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3f5743946376f042'.
+System.TypeLoadException: Could not load type 'Microsoft.OpenApi.Models.OpenApiResponse' from assembly 'Microsoft.OpenApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3f5743946376f042'.
+System.TypeLoadException: Could not load type 'Microsoft.OpenApi.Models.OpenApiOperation' from assembly 'Microsoft.OpenApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3f5743946376f042'.
+System.TypeLoadException: Could not load type 'Microsoft.OpenApi.Models.OpenApiOperation' from assembly 'Microsoft.OpenApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3f5743946376f042'.
+System.TypeLoadException: Could not load type 'Microsoft.OpenApi.Models.OpenApiOperation' from assembly 'Microsoft.OpenApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3f5743946376f042'.
+System.TypeLoadException: Could not load type 'Microsoft.OpenApi.Models.OperationType' from assembly 'Microsoft.OpenApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3f5743946376f042'.
+System.TypeLoadException: Could not load type 'Microsoft.OpenApi.Models.OpenApiParameter' from assembly 'Microsoft.OpenApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3f5743946376f042'.
+System.TypeLoadException: Could not load type 'Microsoft.OpenApi.Models.OpenApiParameter' from assembly 'Microsoft.OpenApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3f5743946376f042'.
+System.TypeLoadException: Could not load type 'Microsoft.OpenApi.Models.OpenApiParameter' from assembly 'Microsoft.OpenApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3f5743946376f042'.
+System.TypeLoadException: Could not load type 'Microsoft.OpenApi.Models.OpenApiPaths' from assembly 'Microsoft.OpenApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3f5743946376f042'.
+System.TypeLoadException: Could not load type 'Microsoft.OpenApi.Models.OpenApiPaths' from assembly 'Microsoft.OpenApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3f5743946376f042'.
+System.TypeLoadException: Could not load type 'Microsoft.OpenApi.Models.OpenApiRequestBody' from assembly 'Microsoft.OpenApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3f5743946376f042'.
+System.TypeLoadException: Could not load type 'Microsoft.OpenApi.Models.OpenApiSecurityScheme' from assembly 'Microsoft.OpenApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3f5743946376f042'.
+System.TypeLoadException: Could not load type 'Microsoft.OpenApi.Models.OpenApiDocument' from assembly 'Microsoft.OpenApi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3f5743946376f042'.

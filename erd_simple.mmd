@@ -1,0 +1,98 @@
+erDiagram
+    DEPARTMENT {
+        int Id PK
+        varchar Name UK
+        varchar Description
+        varchar Code UK
+        boolean IsActive
+        datetime CreatedAt
+        datetime UpdatedAt
+    }
+    
+    EMPLOYEE {
+        int Id PK
+        varchar EmployeeCode UK
+        varchar FirstName
+        varchar LastName
+        varchar Email UK
+        varchar PhoneNumber
+        varchar Address
+        date DateOfBirth
+        date HireDate
+        decimal BaseSalary
+        int Status
+        int DepartmentId FK
+        datetime CreatedAt
+        datetime UpdatedAt
+    }
+    
+    PAYROLL {
+        int Id PK
+        int EmployeeId FK
+        int PayPeriodMonth
+        int PayPeriodYear
+        decimal BaseSalary
+        decimal Overtime
+        decimal Bonus
+        decimal Allowances
+        decimal Deductions
+        decimal TaxDeduction
+        decimal GrossPay
+        decimal NetPay
+        int Status
+        datetime ProcessedDate
+        datetime PaidDate
+        varchar Notes
+        datetime CreatedAt
+        datetime UpdatedAt
+    }
+    
+    PAYROLL_ITEM {
+        int Id PK
+        int PayrollId FK
+        int PayrollItemTypeId FK
+        varchar Description
+        decimal Amount
+        boolean IsDeduction
+        datetime CreatedAt
+    }
+    
+    PAYROLL_ITEM_TYPE {
+        int Id PK
+        varchar Name UK
+        varchar Code UK
+        varchar Description
+        boolean IsDeduction
+        boolean IsActive
+        datetime CreatedAt
+    }
+    
+    ASPNET_USERS {
+        varchar Id PK
+        varchar UserName
+        varchar Email
+        varchar FirstName
+        varchar LastName
+        boolean IsActive
+        datetime CreatedAt
+        datetime UpdatedAt
+    }
+    
+    ASPNET_ROLES {
+        varchar Id PK
+        varchar Name
+        varchar Description
+    }
+    
+    ASPNET_USER_ROLES {
+        varchar UserId FK
+        varchar RoleId FK
+    }
+    
+    DEPARTMENT ||--o{ EMPLOYEE : "has many"
+    EMPLOYEE ||--o{ PAYROLL : "has many"
+    PAYROLL ||--o{ PAYROLL_ITEM : "contains"
+    PAYROLL_ITEM_TYPE ||--o{ PAYROLL_ITEM : "defines"
+    ASPNET_USERS ||--o{ ASPNET_USER_ROLES : "has roles"
+    ASPNET_ROLES ||--o{ ASPNET_USER_ROLES : "assigned to"
+

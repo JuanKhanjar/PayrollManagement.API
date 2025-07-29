@@ -1,0 +1,63 @@
+@PayrollManagement.API_HostAddress = https://localhost:7040
+
+GET {{PayrollManagement.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+
+POST {{PayrollManagement.API_HostAddress}}/api/auth/register
+Content-Type: application/json
+
+{
+  "firstName": "Juan",
+  "lastName": "Khanjar",
+  "email": "jan4ma@gmail.com",
+  "password": "StrongPassw0rd@",
+  "confirmPassword": "StrongPassw0rd@",
+  "phoneNumber": "+4520304050",
+  "department": "Software Development"
+}
+
+
+###
+
+POST {{PayrollManagement.API_HostAddress}}/api/auth/resend-email-confirmation
+Content-Type: application/json
+
+"string"
+
+###
+
+GET {{PayrollManagement.API_HostAddress}}/api/departments
+
+###
+
+@userId=string
+@token=string
+GET {{PayrollManagement.API_HostAddress}}/api/auth/confirm-email?userId={{userId}}&token={{token}}
+
+###
+
+POST {{PayrollManagement.API_HostAddress}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "jan4ma@gmail.com",
+  "password": "StrongPassw0rd@",
+  "rememberMe": true
+}
+
+
+###
+
+GET {{PayrollManagement.API_HostAddress}}/api/auth/profile
+
+###
+
+GET {{PayrollManagement.API_HostAddress}}/api/departments
+
+###
+
+GET {{PayrollManagement.API_HostAddress}}/api/departments/active
+
+###

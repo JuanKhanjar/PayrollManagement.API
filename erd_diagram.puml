@@ -1,0 +1,114 @@
+@startuml Payroll_Management_ERD
+
+!define ENTITY class
+!define PK <<PK>>
+!define FK <<FK>>
+!define UK <<UK>>
+
+ENTITY Department {
+    + Id : int PK
+    + Name : varchar(100) UK
+    + Description : varchar(500)
+    + Code : varchar(50) UK
+    + IsActive : boolean
+    + CreatedAt : datetime
+    + UpdatedAt : datetime
+}
+
+ENTITY Employee {
+    + Id : int PK
+    + EmployeeCode : varchar(50) UK
+    + FirstName : varchar(100)
+    + LastName : varchar(100)
+    + Email : varchar(255) UK
+    + PhoneNumber : varchar(20)
+    + Address : varchar(500)
+    + DateOfBirth : date
+    + HireDate : date
+    + BaseSalary : decimal(18,2)
+    + Status : int
+    + DepartmentId : int FK
+    + CreatedAt : datetime
+    + UpdatedAt : datetime
+}
+
+ENTITY Payroll {
+    + Id : int PK
+    + EmployeeId : int FK
+    + PayPeriodMonth : int
+    + PayPeriodYear : int
+    + BaseSalary : decimal(18,2)
+    + Overtime : decimal(18,2)
+    + Bonus : decimal(18,2)
+    + Allowances : decimal(18,2)
+    + Deductions : decimal(18,2)
+    + TaxDeduction : decimal(18,2)
+    + GrossPay : decimal(18,2)
+    + NetPay : decimal(18,2)
+    + Status : int
+    + ProcessedDate : datetime
+    + PaidDate : datetime
+    + Notes : varchar(1000)
+    + CreatedAt : datetime
+    + UpdatedAt : datetime
+}
+
+ENTITY PayrollItem {
+    + Id : int PK
+    + PayrollId : int FK
+    + PayrollItemTypeId : int FK
+    + Description : varchar(255)
+    + Amount : decimal(18,2)
+    + IsDeduction : boolean
+    + CreatedAt : datetime
+}
+
+ENTITY PayrollItemType {
+    + Id : int PK
+    + Name : varchar(100) UK
+    + Code : varchar(50) UK
+    + Description : varchar(500)
+    + IsDeduction : boolean
+    + IsActive : boolean
+    + CreatedAt : datetime
+}
+
+ENTITY AspNetUsers {
+    + Id : varchar(450) PK
+    + UserName : varchar(256)
+    + Email : varchar(256)
+    + FirstName : varchar(100)
+    + LastName : varchar(100)
+    + IsActive : boolean
+    + CreatedAt : datetime
+    + UpdatedAt : datetime
+}
+
+ENTITY AspNetRoles {
+    + Id : varchar(450) PK
+    + Name : varchar(256)
+    + Description : varchar(500)
+}
+
+ENTITY AspNetUserRoles {
+    + UserId : varchar(450) FK
+    + RoleId : varchar(450) FK
+}
+
+' Relationships
+Department ||--o{ Employee : "has many"
+Employee ||--o{ Payroll : "has many"
+Payroll ||--o{ PayrollItem : "contains"
+PayrollItemType ||--o{ PayrollItem : "defines"
+
+AspNetUsers ||--o{ AspNetUserRoles : "has roles"
+AspNetRoles ||--o{ AspNetUserRoles : "assigned to users"
+
+' Constraints and Indexes
+note right of Employee : Unique: EmployeeCode, Email\nIndex: DepartmentId, Status
+note right of Payroll : Unique: EmployeeId + PayPeriodMonth + PayPeriodYear\nIndex: Status, ProcessedDate
+note right of Department : Unique: Name, Code
+note right of PayrollItemType : Unique: Name, Code
+
+@enduml
+
